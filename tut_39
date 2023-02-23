@@ -1,0 +1,25 @@
+/*Write a program to delete a character in given string.*/
+
+
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100], del;
+    int i, j;
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+    printf("Enter the character to delete: ");
+    scanf("%c", &del);
+
+    for (i = 0, j = 0; str[i] != '\0'; i++) 
+    {
+        if (str[i] != del) 
+        {
+            str[j++] = str[i];
+        }
+    }
+
+    str[j] = '\0';
+    printf("Modified string: %s", str);
+    return 0;
+}
