@@ -1,0 +1,26 @@
+/*Write a program to replace a character in given string.*/
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+    char str[100], find, replace;
+    int i;
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+    printf("Enter the character to replace: ");
+    scanf("%c", &find);
+    printf("Enter the replacement character: ");
+    scanf(" %c", &replace);
+    for (i = 0; str[i] != '\0'; i++) 
+    {
+        if (str[i] == find) 
+        {
+            str[i] = replace;
+        }
+    }
+    printf("Modified string: %s", str);
+    return 0;
+}
