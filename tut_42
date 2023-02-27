@@ -1,0 +1,26 @@
+/*Write a program that defines a function to add first n numbers.*/
+
+
+#include <stdio.h>
+
+int sum_first_n(int n) 
+{
+    int sum = 0;
+    int i;
+
+    for (i = 1; i <= n; i++) 
+    {
+        sum += i;
+    }
+    return sum;
+}
+
+int main() 
+{
+    int n;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+    printf("Sum of first %d numbers: %d\n", n, sum_first_n(n));
+    return 0;
+}
