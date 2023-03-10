@@ -1,0 +1,39 @@
+/*Define a structure type struct personal that would contain person name, 
+date of joining and salary using this structure to read this information 
+of 5 people and print the same on screen.*/
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct personal {
+    char name[100];
+    int day, month, year;
+    float salary;
+};
+
+int main(){
+
+    struct personal people[5];
+
+    for (int i = 0; i < 5; i++) {
+        printf("Enter details for person %d:\n", i+1);
+        printf("Name: ");
+        scanf("%s", people[i].name);
+        printf("Date of joining (DD MM YYYY): ");
+        scanf("%d %d %d", &people[i].day, &people[i].month, &people[i].year);
+        printf("Salary: ");
+        scanf("%f", &people[i].salary);
+    }
+
+    printf("\nInformation of all 5 people:\n");
+
+    for (int i = 0; i < 5; i++) {
+        printf("Person %d:\n", i+1);
+        printf("Name: %s\n", people[i].name);
+        printf("Date of joining: %02d/%02d/%d\n", people[i].day, people[i].month, people[i].year);
+        printf("Salary: $%.2f\n", people[i].salary);
+    }
+    return 0;
+}
+
