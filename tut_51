@@ -1,0 +1,21 @@
+/*Define structure data type called time_struct containing three member’s integer hour, 
+integer minute and integer second. Develop a program that would assign values to the 
+individual number and display the time in the following format: 16: 40:51*/
+
+
+#include <stdio.h>
+
+struct time_struct {
+    int hour;
+    int minute;
+    int second;
+};
+
+int main() {
+   
+    struct time_struct time = {16, 40, 51};
+
+    printf("%02d:%02d:%02d\n", time.hour, time.minute, time.second);
+
+    return 0;
+}
