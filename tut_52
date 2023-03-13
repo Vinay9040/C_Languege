@@ -1,0 +1,44 @@
+/*Define a structure called cricket that will describe the following information: Player name Team name Batting average Using cricket, 
+declare an array player with 50 elements and write a C program to read the information about all the 50 players and print team wise list 
+containing names of players with their batting average.*/
+
+
+#include <stdio.h>
+
+struct cricket {
+    char player_name[50];
+    char team_name[50];
+    float batting_average;
+};
+
+int main() {
+    struct cricket player[50];
+
+    for (int i = 0; i < 50; i++) {
+        printf("Enter player name, team name, and batting average of player %d:\n", i + 1);
+        scanf("%s %s %f", player[i].player_name, player[i].team_name, &player[i].batting_average);
+    }
+
+    printf("\nTeam-wise list of players with their batting average:\n");
+    
+    char current_team[50];
+    float team_batting_average = 0;
+    int team_size = 0;
+
+    for (int i = 0; i < 50; i++) {
+     
+        if (strcmp(player[i].team_name, current_team) != 0 && i != 0) {
+            printf("Team: %s, Batting Average: %.2f\n", current_team, team_batting_average / team_size);
+            team_batting_average = 0;
+            team_size = 0;
+        }
+        printf("%s, %.2f\n", player[i].player_name, player[i].batting_average);
+
+        strcpy(current_team, player[i].team_name);
+        team_batting_average += player[i].batting_average;
+        team_size++;
+    }
+    printf("Team: %s, Batting Average: %.2f\n", current_team, team_batting_average / team_size);
+
+    return 0;
+}
