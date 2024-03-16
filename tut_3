@@ -1,6 +1,7 @@
 #include<stdio.h>
 int main()
 {
+    
     int n ;
     float p,r,i ;
     printf("entrt amount : ") ;
